@@ -140,22 +140,32 @@ function filterProjects(query = '', projectsCache){
   })();
 }
 
-/* BLOG teasers loader */
+  
+/* BLOG teasers loader — show 3 posts, then expand to all */
 async function loadBlogTeasers(){
-  try{
+  try {
     const res = await fetch(POSTS_JSON, {cache: 'no-cache'});
     const posts = await res.json();
     const el = document.getElementById('blogList');
-    el.innerHTML = posts.slice(0,3).map(p => `
-      <article class="blog-teaser" aria-labelledby="post-${p.slug}">
-        <h3 id="post-${p.slug}"><a href="post.html?slug=${encodeURIComponent(p.slug)}">${escapeHtml(p.title)}</a></h3>
-        <p class="meta">${escapeHtml(p.date)} • ${escapeHtml(p.readingTime || '')}</p>
-        <p>${escapeHtml(p.excerpt)}</p>
-      </article>
-    `).join('');
-  }catch(err){
+
+    // Render first 3 posts initially
+    el.innerHTML = renderPosts(posts.slice(0,3));
+  } catch(err) {
     console.error('Failed to load posts:', err);
   }
+}
+
+/* helper to render posts */
+function renderPosts(list){
+  return list.map(p => `
+    <article class="blog-teaser" aria-labelledby="post-${p.slug}">
+      <h3 id="post-${p.slug}">
+        <a href="post.html?slug=${encodeURIComponent(p.slug)}">${escapeHtml(p.title)}</a>
+      </h3>
+      <p class="meta">${escapeHtml(p.date)} • ${escapeHtml(p.readingTime || '')}</p>
+      <p>${escapeHtml(p.excerpt)}</p>
+    </article>
+  `).join('');
 }
 
 /* Utility: escape HTML (very small helper) */
