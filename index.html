@@ -1,12 +1,14 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <!-- Basic meta -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
   <title>Avijit Jana — Data Scientist | Portfolio</title>
-  <meta name="description" content="Avijit Jana — Data Scientist. Portfolio showcasing data science, machine learning, and analytics projects. I build intelligent systems that deliver impactful solutions. Contact for collaboration or hiring.">
+  <meta name="description"
+    content="Avijit Jana — Data Scientist. Portfolio showcasing data science, machine learning, and analytics projects. I build intelligent systems that deliver impactful solutions. Contact for collaboration or hiring.">
 
   <!-- Canonical -->
   <link rel="canonical" href="https://avijit-jana.github.io/" />
@@ -14,17 +16,19 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Avijit Jana — Data Scientist | Portfolio" />
-  <meta property="og:description" content="Portfolio showcasing data science, machine learning, and analytics projects." />
+  <meta property="og:description"
+    content="Portfolio showcasing data science, machine learning, and analytics projects." />
   <meta property="og:url" content="https://avijit-jana.github.io/" />
   <meta property="og:site_name" content="Avijit Jana — Data Scientist" />
   <meta property="og:image" content="https://avijit-jana.github.io/assets/images/hero.jpg" />
-  <meta name="google-site-verification" content="j3XqUoNIyJE90jhMHNSrwDG09jqtZYIIESXyhnAPkBQ" />  
-  
+  <meta name="google-site-verification" content="j3XqUoNIyJE90jhMHNSrwDG09jqtZYIIESXyhnAPkBQ" />
+
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@avijit_jana" />
   <meta name="twitter:title" content="Avijit Jana — Data Scientist | Portfolio" />
-  <meta name="twitter:description" content="Portfolio showcasing data science, machine learning, and analytics projects." />
+  <meta name="twitter:description"
+    content="Portfolio showcasing data science, machine learning, and analytics projects." />
   <meta name="twitter:image" content="https://avijit-jana.github.io/assets/images/hero.jpg" />
 
   <!-- SEO: index/follow -->
@@ -47,9 +51,12 @@
   </script>
 
   <!-- Fonts & Icons (CDN) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity=""
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Main CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
@@ -58,11 +65,12 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-XXXXXXX'); // <-- Replace with your GA4 ID
   </script>
 </head>
+
 <body class="theme-light">
   <!-- Skip link for keyboard users (accessibility) -->
   <a class="skip-link" href="#maincontent">Skip to content</a>
@@ -70,7 +78,8 @@
   <header class="site-header" role="banner" aria-label="Main header">
     <div class="container header-inner">
       <a class="brand" href="/" aria-label="Homepage">
-        <img src="assets/images/my_pic.png" alt="Avijit Jana professional portrait" class="brand-img" width="48" height="48"/>
+        <img src="assets/images/my_pic.png" alt="Avijit Jana professional portrait" class="brand-img" width="44"
+          height="44" />
         <span class="brand-name">Avijit Jana</span>
       </a>
 
@@ -85,7 +94,11 @@
           <li><a href="#projects">Projects</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li><a href="assets/My_Resume.pdf" target="_blank" rel="noopener">Resume</a></li>
         </ul>
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+          <i class="fa-solid fa-moon" aria-hidden="true"></i>
+        </button>
       </nav>
     </div>
   </header>
@@ -94,11 +107,42 @@
     <!-- Hero / Landing -->
     <section class="hero container" aria-labelledby="hero-heading">
       <div class="hero-content">
-        <h1 id="hero-heading">Hi, I'm <strong>Avijit Jana</strong><br>(Data Scientist)</h1>
-        <p class="lead">I build production-ready machine learning systems and data-driven insights. I blend rigorous experimentation with scalable engineering.</p>
+        <span class="hero-badge">
+          <i class="fa-solid fa-sparkles" aria-hidden="true"></i>
+          Available for Projects
+        </span>
+        <h1 id="hero-heading" class="hero-title" aria-live="polite">
+          <span id="dynamic-greeting">I am Avijit Jana</span>
+          <span class="role">Data Scientist & ML Engineer</span>
+        </h1>
+        <p class="lead">I build production-ready machine learning systems and data-driven insights. Blending rigorous
+          experimentation with scalable engineering to deliver impactful AI solutions.</p>
+
+        <!-- Key Highlights -->
+        <div class="hero-highlights">
+          <div class="highlight-item">
+            <i class="fa-solid fa-brain" aria-hidden="true"></i>
+            <span>End-to-End MLOps</span>
+          </div>
+          <div class="highlight-item">
+            <i class="fa-solid fa-robot" aria-hidden="true"></i>
+            <span>RAG & LLM Apps</span>
+          </div>
+          <div class="highlight-item">
+            <i class="fa-solid fa-cloud" aria-hidden="true"></i>
+            <span>AWS Cloud</span>
+          </div>
+        </div>
+
         <p class="hero-cta">
-          <a class="btn primary" href="#projects">View Projects</a>
-          <a class="btn outline" href="assets/My_Resume.pdf" aria-label="Download professional resume (PDF)">Download Resume</a>
+          <a class="btn primary" href="#projects">
+            <i class="fa-solid fa-folder-open" aria-hidden="true"></i>
+            View Projects
+          </a>
+          <a class="btn outline" href="assets/My_Resume.pdf" aria-label="Download professional resume (PDF)">
+            <i class="fa-solid fa-download" aria-hidden="true"></i>
+            Download Resume
+          </a>
         </p>
       </div>
       <figure class="hero-image" aria-hidden="true">
@@ -109,84 +153,157 @@
     <!-- About -->
     <section id="about" class="container about" aria-labelledby="about-heading">
       <h2 id="about-heading">About Me</h2>
-      <p>I'm a <b>Data Scientist</b> and Machine Learning Engineer focused on <b>end-to-end MLOps</b>, building robust data pipelines, and ensuring model interpretability. I specialize in turning complex, messy data into measurable business value.</p>
+      <p>I'm a <b>Data Scientist</b> and Machine Learning Engineer focused on <b>end-to-end MLOps</b>, building robust
+        data pipelines, and ensuring model interpretability. I specialize in turning complex, messy data into measurable
+        business value with modern AI technologies.</p>
       <ul class="about-highlights" role="list">
-        <li><b>Production ML:</b> Deployment, monitoring, MLOps, Sagemaker/Vertex AI</li>
-        <li><b>Data Engineering:</b> ETL, SQL, Spark</li>
-        <li><b>Interpretability & Experimentation:</b> Casual Inference, A/B testing, SHAP/LIME, Statistical Modeling</li>
+        <li>
+          <b>Production ML:</b> Deployment, monitoring, MLOps, Sagemaker/Vertex AI, Docker containerization
+        </li>
+        <li>
+          <b>Data Engineering:</b> ETL pipelines, SQL, Spark, Airflow, real-time data processing
+        </li>
+        <li>
+          <b>AI/LLM:</b> RAG applications, LangChain, vector databases, prompt engineering
+        </li>
+        <li>
+          <b>Interpretability & Experimentation:</b> Causal Inference, A/B testing, SHAP/LIME, Statistical Modeling
+        </li>
       </ul>
     </section>
 
     <!-- Skills -->
     <section id="skills" class="container skills" aria-labelledby="skills-heading">
-      <h2 id="skills-heading">Skills</h2>
+      <h2 id="skills-heading">Skills & Technologies</h2>
       <div class="skill-grid" role="list">
+        <!-- Python -->
         <div class="skill" role="listitem" aria-label="Python">
           <i class="fa-brands fa-python" aria-hidden="true"></i>
           <div><strong>Python</strong><small>scikit-learn, pandas, PyTorch</small></div>
         </div>
+        <!-- Data Engineering -->
         <div class="skill" role="listitem" aria-label="Data Engineering">
           <i class="fa-solid fa-database" aria-hidden="true"></i>
           <div><strong>Data Engineering</strong><small>SQL, Spark, Airflow</small></div>
         </div>
-        <div class="skill" role="listitem" aria-label="Cloud">
-          <i class="fa-solid fa-cloud" aria-hidden="true"></i>
-          <div><strong>Cloud</strong><small>AWS, GCP, Docker</small></div>
+        <!-- MongoDB -->
+        <div class="skill" role="listitem" aria-label="MongoDB">
+          <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+          <div><strong>MongoDB</strong><small>NoSQL, Document DB</small></div>
         </div>
+        <!-- Vector DB -->
+        <div class="skill" role="listitem" aria-label="Vector Database">
+          <i class="fa-solid fa-cubes" aria-hidden="true"></i>
+          <div><strong>Vector DB</strong><small>Pinecone, ChromaDB</small></div>
+        </div>
+        <!-- Streamlit -->
+        <div class="skill" role="listitem" aria-label="Streamlit">
+          <i class="fa-solid fa-display" aria-hidden="true"></i>
+          <div><strong>Streamlit</strong><small>Data Apps, Dashboards</small></div>
+        </div>
+        <!-- FastAPI -->
+        <div class="skill" role="listitem" aria-label="FastAPI">
+          <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+          <div><strong>FastAPI</strong><small>REST APIs, Async</small></div>
+        </div>
+        <!-- AWS S3 -->
+        <div class="skill" role="listitem" aria-label="AWS S3">
+          <i class="fa-brands fa-aws" aria-hidden="true"></i>
+          <div><strong>AWS S3</strong><small>Cloud Storage, Data Lake</small></div>
+        </div>
+        <!-- RAG Apps -->
+        <div class="skill" role="listitem" aria-label="RAG Applications">
+          <i class="fa-solid fa-robot" aria-hidden="true"></i>
+          <div><strong>RAG Apps</strong><small>Retrieval Augmented Gen</small></div>
+        </div>
+        <!-- LangChain -->
+        <div class="skill" role="listitem" aria-label="LangChain">
+          <i class="fa-solid fa-link" aria-hidden="true"></i>
+          <div><strong>LangChain</strong><small>LLM Orchestration</small></div>
+        </div>
+        <!-- Visualization -->
         <div class="skill" role="listitem" aria-label="Visualization">
           <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
-          <div><strong>Viz</strong><small>Power BI, Plotly, D3</small></div>
+          <div><strong>Visualization</strong><small>Power BI, Plotly, D3</small></div>
+        </div>
+        <!-- Docker -->
+        <div class="skill" role="listitem" aria-label="Docker">
+          <i class="fa-brands fa-docker" aria-hidden="true"></i>
+          <div><strong>Docker</strong><small>Containerization, K8s</small></div>
+        </div>
+        <!-- Git -->
+        <div class="skill" role="listitem" aria-label="Git">
+          <i class="fa-brands fa-git-alt" aria-hidden="true"></i>
+          <div><strong>Git</strong><small>Version Control, CI/CD</small></div>
         </div>
       </div>
     </section>
 
-    <!-- Projects (dynamic) -->
+    <!-- Projects (dynamic - 4x2 grid with search) -->
     <section id="projects" class="container projects" aria-labelledby="projects-heading">
       <h2 id="projects-heading">Featured Projects</h2>
 
-      <!-- Filters -->
+      <!-- Search and Filters -->
       <div class="projects-controls" role="region" aria-label="Project filters">
-        <label for="project-search" class="sr-only">Search projects</label>
-        <input id="project-search" type="search" placeholder="Search projects..." aria-label="Search projects" />
-
+        <div class="search-wrapper">
+          <i class="fa-solid fa-search" aria-hidden="true"></i>
+          <input id="project-search" type="search" placeholder="Search projects by name, tech, or domain..."
+            aria-label="Search projects" />
+        </div>
         <div class="tag-filters" role="group" aria-label="Filter by tags" id="tagFilters"></div>
       </div>
 
-      <!-- Grid -->
+      <!-- Grid (8 projects max displayed) -->
       <div id="projectsGrid" class="project-grid" aria-live="polite">
         <!-- JS renders projects here -->
       </div>
-      
+
+      <!-- Projects Info -->
+      <div class="projects-info" id="projectsInfo">
+        <span>Loading projects...</span>
+      </div>
     </section>
 
-    <!-- Blog teaser -->
     <section id="blog" class="container blog" aria-labelledby="blog-heading">
-      <h2 id="blog-heading">From the Blog</h2>
+      <h2 id="blog-heading" class="section-title-center">Latest from the Blog</h2>
       <div id="blogList" class="blog-list" aria-live="polite">
-        <!-- JS will insert blog post teasers from assets/js/posts.json -->
+        <!-- JS will insert latest 3 blog post teasers -->
       </div>
-      <p><a href="blog.html" class="btn"">Read all posts</a></p>
+      <div class="blog-cta">
+        <a href="blog.html" class="btn primary">
+          <i class="fa-solid fa-newspaper" aria-hidden="true"></i>
+          View All Posts
+        </a>
+      </div>
     </section>
 
     <!-- Contact -->
     <section id="contact" class="container contact" aria-labelledby="contact-heading">
       <h2 id="contact-heading">Let's Connect</h2>
-      <p>I'm available for collaboration, consulting, or tackling data science challenges. Whether it's a project, an idea, or a new opportunity, I'd love to hear from you — just drop a message using the form below.👇</p>
+      <p>I'm available for collaboration, consulting, or tackling data science challenges. Whether it's a project, an
+        idea, or a new opportunity, I'd love to hear from you — just drop a message using the form below.👇</p>
 
-      <!-- Simple mailto fallback form: GitHub Pages cannot host server forms, so we provide a mailto fallback and suggestions in a comment for using Formspree / Netlify Forms -->
       <form class="contact-form" onsubmit="handleContact(event)" aria-label="Contact form">
         <label for="name">Name</label>
-        <input id="name" name="name" required />
+        <input id="name" name="name" required placeholder="Your name" />
 
         <label for="email">Email</label>
-        <input id="email" name="email" type="email" required />
+        <input id="email" name="email" type="email" required placeholder="your.email@example.com" />
 
         <label for="message">Message</label>
-        <textarea id="message" name="message" rows="6" required></textarea>
+        <textarea id="message" name="message" rows="5" required
+          placeholder="Tell me about your project or idea..."></textarea>
 
         <div class="form-actions">
-          <button type="submit" class="btn primary">Send</button>
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=your.email@example.com" target="_blank" rel="noopener noreferrer" class="btn outline">Or email me</a>
+          <button type="submit" class="btn primary">
+            <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+            Send Message
+          </button>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=your.email@example.com" target="_blank"
+            rel="noopener noreferrer" class="btn outline">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            Or email me
+          </a>
         </div>
       </form>
     </section>
@@ -194,18 +311,19 @@
 
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
-      <small>&copy; <span id="year"></span> Avijit Jana — Data Scientist. Built with ❤️ •  All rights reserved.</small>
+      <small>&copy; <span id="year"></span> Avijit Jana — Data Scientist. Built with ❤️ • All rights reserved.</small>
       <nav aria-label="Footer social">
-        <a href="https://github.com/avijit-jana" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/avijit-jana" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/avijit-jana" aria-label="GitHub" target="_blank" rel="noopener"><i
+            class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/avijit-jana" aria-label="LinkedIn" target="_blank" rel="noopener"><i
+            class="fa-brands fa-linkedin"></i></a>
         <a href="#" aria-label="X/Twitter"><i class="fa-brands fa-x-twitter"></i></a>
       </nav>
     </div>
   </footer>
 
-  <!-- Minimal accessible focus style helper -->
+  <!-- Set copyright year -->
   <script>
-    // Set copyright year
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 
@@ -213,4 +331,5 @@
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script src="assets/js/main.js" type="module"></script>
 </body>
+
 </html>
