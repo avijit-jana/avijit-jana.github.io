@@ -1,49 +1,150 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
-  <title>Blog — Master</title>
-  <meta name="description" content="Blog posts about data science, ML, and deployment." />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Blog — Avijit Jana | Data Scientist</title>
+  <meta name="description" content="Blog posts about data science, ML, AI, and deployment by Avijit Jana." />
   <meta name="robots" content="index, follow" />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous" />
+
   <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
-  <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-XXXXXXX');</script>
+  <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-XXXXXXX');</script>
 </head>
-<body>
-  <header class="site-header">
+
+<body class="theme-light">
+  <a class="skip-link" href="#posts">Skip to content</a>
+
+  <header class="site-header" role="banner">
     <div class="container header-inner">
-      <a class="brand" href="/">Master</a>
+      <a class="brand" href="/" aria-label="Homepage">
+        <img src="assets/images/my_pic.png" alt="Avijit Jana" class="brand-img" width="44" height="44" />
+        <span class="brand-name">Avijit Jana</span>
+      </a>
       <nav class="site-nav" aria-label="Primary navigation">
-        <ul class="nav-list">
+        <button class="nav-toggle" aria-controls="mainnav" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <i class="fa fa-bars" aria-hidden="true"></i>
+        </button>
+        <ul id="mainnav" class="nav-list">
           <li><a href="/">Home</a></li>
-          <li><a href="#posts">Posts</a></li>
+          <li><a href="/#about">About</a></li>
+          <li><a href="/#skills">Skills</a></li>
+          <li><a href="/#projects">Projects</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="/#contact">Contact</a></li>
         </ul>
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+          <i class="fa-solid fa-moon" aria-hidden="true"></i>
+        </button>
       </nav>
     </div>
   </header>
-  <main class="container" id="posts" role="main">
-    <h1>Blog</h1>
-    <div id="postsList"></div>
+
+  <main class="container" id="posts" role="main" style="padding-top: 2rem; padding-bottom: 3rem;">
+    <h1 style="margin-bottom: 0.5rem;">Blog</h1>
+    <p style="color: var(--text-secondary); margin-bottom: 2rem;">Thoughts on data science, machine learning, AI, and
+      software engineering.</p>
+
+    <div id="postsList" class="blog-list"></div>
   </main>
-  <footer class="site-footer container">
-    <small>&copy; <span id="year"></span> Master</small>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <small>&copy; <span id="year"></span> Avijit Jana — Data Scientist</small>
+      <nav aria-label="Footer social">
+        <a href="https://github.com/avijit-jana" aria-label="GitHub" target="_blank" rel="noopener"><i
+            class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/avijit-jana" aria-label="LinkedIn" target="_blank" rel="noopener"><i
+            class="fa-brands fa-linkedin"></i></a>
+      </nav>
+    </div>
   </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-    async function loadPosts(){
-      const res = await fetch('assets/js/posts.json');
-      const posts = await res.json();
-      const el = document.getElementById('postsList');
-      el.innerHTML = posts.map(p => `
-        <article>
-          <h2><a href="post.html?slug=${encodeURIComponent(p.slug)}">${p.title}</a></h2>
-          <p class="meta">${p.date} • ${p.readingTime}</p>
-          <p>${p.excerpt}</p>
-        </article>
-      `).join('');
+
+    // Theme toggle
+    const themeBtn = document.getElementById('themeToggle');
+    if (themeBtn) {
+      const savedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+      if (savedTheme) {
+        document.body.className = savedTheme;
+      } else if (prefersDark) {
+        document.body.className = 'theme-dark';
+      }
+
+      updateIcon();
+
+      themeBtn.addEventListener('click', () => {
+        const isDark = document.body.classList.contains('theme-dark');
+        document.body.className = isDark ? 'theme-light' : 'theme-dark';
+        localStorage.setItem('theme', document.body.className);
+        updateIcon();
+      });
+
+      function updateIcon() {
+        const isDark = document.body.classList.contains('theme-dark');
+        themeBtn.innerHTML = isDark
+          ? '<i class="fa-solid fa-sun" aria-hidden="true"></i>'
+          : '<i class="fa-solid fa-moon" aria-hidden="true"></i>';
+      }
     }
+
+    // Nav toggle
+    const navBtn = document.querySelector('.nav-toggle');
+    const navList = document.getElementById('mainnav');
+    if (navBtn && navList) {
+      navBtn.addEventListener('click', () => {
+        const expanded = navBtn.getAttribute('aria-expanded') === 'true';
+        navBtn.setAttribute('aria-expanded', !expanded);
+        navList.classList.toggle('open');
+      });
+    }
+
+    // Load all posts
+    async function loadPosts() {
+      try {
+        const res = await fetch('assets/js/posts.json');
+        const posts = await res.json();
+
+        // Sort by date descending
+        posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+        const el = document.getElementById('postsList');
+        el.innerHTML = posts.map((p, i) => `
+          <article class="blog-teaser" style="animation: fadeInUp 0.5s ease-out ${i * 0.1}s backwards;">
+            <h3><a href="post.html?slug=${encodeURIComponent(p.slug)}">${escapeHtml(p.title)}</a></h3>
+            <p class="meta">${p.date} • ${p.readingTime}</p>
+            <p>${escapeHtml(p.excerpt)}</p>
+            ${p.tags ? `<div class="tags" style="margin-top: 0.75rem;">${p.tags.map(t => `<span class="tag">${escapeHtml(t)}</span>`).join('')}</div>` : ''}
+          </article>
+        `).join('');
+      } catch (err) {
+        console.error('Failed to load posts:', err);
+        document.getElementById('postsList').innerHTML = '<p>Failed to load blog posts.</p>';
+      }
+    }
+
+    function escapeHtml(str = '') {
+      return String(str).replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]));
+    }
+
     loadPosts();
   </script>
 </body>
+
 </html>
