@@ -2,8 +2,19 @@
   {
     "title": "huggingface-nlp-image-tool",
     "description": "End-to-end application leveraging Hugging Face pretrained models for multi-task NLP and image generation (Streamlit/Gradio front-end, model evaluation).",
-    "tech": ["Python", "HuggingFace", "Transformers", "Streamlit", "NLP", "Image-Generation"],
-    "domains": ["NLP", "Computer Vision", "Tooling"],
+    "tech": [
+      "Python",
+      "HuggingFace",
+      "Transformers",
+      "Streamlit",
+      "NLP",
+      "Image-Generation"
+    ],
+    "domains": [
+      "NLP",
+      "Computer Vision",
+      "Tooling"
+    ],
     "image": "https://socialify.git.ci/avijit-jana/huggingface-nlp-image-tool/image?font=JetBrains+Mono&language=1&name=1&owner=1&pattern=Formal+Invitation&stargazers=1&theme=Dark",
     "imageAlt": "Hugging Face NLP & image tool interface",
     "url": "https://github.com/avijit-jana/huggingface-nlp-image-tool",
@@ -13,8 +24,16 @@
   {
     "title": "cnn-architectures-benchmark",
     "description": "Comparative benchmark of CNN architectures (LeNet, AlexNet, GoogLeNet, ResNet, Xception) on MNIST / Fashion-MNIST / CIFAR-10 with full evaluation metrics.",
-    "tech": ["Python", "PyTorch", "CNN", "Computer-Vision"],
-    "domains": ["Benchmarking", "Research"],
+    "tech": [
+      "Python",
+      "PyTorch",
+      "CNN",
+      "Computer-Vision"
+    ],
+    "domains": [
+      "Benchmarking",
+      "Research"
+    ],
     "image": "https://socialify.git.ci/avijit-jana/cnn-architectures-benchmark/image?font=JetBrains+Mono&language=1&name=1&owner=1&pattern=Formal+Invitation&stargazers=1&theme=Dark",
     "imageAlt": "CNN benchmark charts",
     "url": "https://github.com/avijit-jana/cnn-architectures-benchmark",
@@ -24,8 +43,16 @@
   {
     "title": "SeqFlipAttention",
     "description": "PyTorch sequence-to-sequence demo exploring attention mechanisms (synthetic reverse-sequence task) with training scripts and visualizations.",
-    "tech": ["Python", "PyTorch", "Seq2Seq", "Attention"],
-    "domains": ["Research", "Deep Learning"],
+    "tech": [
+      "Python",
+      "PyTorch",
+      "Seq2Seq",
+      "Attention"
+    ],
+    "domains": [
+      "Research",
+      "Deep Learning"
+    ],
     "image": "https://socialify.git.ci/avijit-jana/SeqFlipAttention/image?font=JetBrains+Mono&language=1&name=1&owner=1&pattern=Formal+Invitation&stargazers=1&theme=Dark",
     "imageAlt": "Attention visualization",
     "url": "https://github.com/avijit-jana/SeqFlipAttention",
@@ -35,8 +62,15 @@
   {
     "title": "Classifying_Cybersecurity_Incidents",
     "description": "Classification pipeline for cybersecurity incidents (uses GUIDE dataset) to assist SOC triage — includes modeling, evaluation and analysis.",
-    "tech": ["Python", "Machine-Learning", "Classification"],
-    "domains": ["Security", "Anomaly Detection"],
+    "tech": [
+      "Python",
+      "Machine-Learning",
+      "Classification"
+    ],
+    "domains": [
+      "Security",
+      "Anomaly Detection"
+    ],
     "image": "https://socialify.git.ci/avijit-jana/Classifying_Cybersecurity_Incidents/image?font=JetBrains+Mono&language=1&name=1&owner=1&pattern=Formal+Invitation&stargazers=1&theme=Dark",
     "imageAlt": "Cybersecurity incident classification",
     "url": "https://github.com/avijit-jana/Classifying_Cybersecurity_Incidents",
@@ -46,8 +80,15 @@
   {
     "title": "Dominos Predictive Purchase Order System",
     "description": "Sales forecasting project for Domino's ingredient ordering — historical-sales forecasting to optimize orders and reduce waste.",
-    "tech": ["Python", "Time-Series", "Forecasting"],
-    "domains": ["Forecasting", "Supply Chain"],
+    "tech": [
+      "Python",
+      "Time-Series",
+      "Forecasting"
+    ],
+    "domains": [
+      "Forecasting",
+      "Supply Chain"
+    ],
     "image": "https://socialify.git.ci/avijit-jana/Dominos-Predictive_Purchase_Order_System/image?font=Bitter&language=1&name=1&owner=1&pattern=Formal+Invitation&stargazers=1&theme=Dark",
     "imageAlt": "Sales forecasting visualization",
     "url": "https://github.com/avijit-jana/Dominos-Predictive_Purchase_Order_System",
@@ -57,8 +98,16 @@
   {
     "title": "RedBus Data Dashboard and Scraper",
     "description": "Streamlit dashboard + Selenium scraper that collects RedBus travel data and visualizes trends for operational analysis.",
-    "tech": ["Python", "Selenium", "Streamlit", "Web-Scraping"],
-    "domains": ["Data Engineering", "Dashboarding"],
+    "tech": [
+      "Python",
+      "Selenium",
+      "Streamlit",
+      "Web-Scraping"
+    ],
+    "domains": [
+      "Data Engineering",
+      "Dashboarding"
+    ],
     "image": "https://socialify.git.ci/avijit-jana/RedBus-Data-Scraper-Dashboard/image?font=Inter&language=1&name=1&owner=1&pattern=Formal+Invitation&stargazers=1&theme=Dark",
     "imageAlt": "RedBus data dashboard",
     "url": "https://github.com/avijit-jana/RedBus-Data-Scraper-Dashboard",
@@ -68,8 +117,18 @@
   {
     "title": "Financial Document Analysis Dashboard",
     "description": "An AI-powered Streamlit dashboard that extracts, parses, and analyzes financial documents (PDFs, reports, statements) to provide structured insights and visualizations for decision-making.",
-    "tech": ["Python", "Streamlit", "NLP", "Regex", "Data Visualization"],
-    "domains": ["Data Engineering", "Document AI", "Dashboarding"],
+    "tech": [
+      "Python",
+      "Streamlit",
+      "NLP",
+      "Regex",
+      "Data Visualization"
+    ],
+    "domains": [
+      "Data Engineering",
+      "Document AI",
+      "Dashboarding"
+    ],
     "image": "https://socialify.git.ci/avijit-jana/financial-docs-qa-assistant/image?custom_language=Jupyter+Notebook&font=JetBrains+Mono&language=1&name=1&owner=1&pattern=Formal+Invitation&stargazers=1&theme=Dark",
     "imageAlt": "Financial document analysis dashboard",
     "url": "https://github.com/avijit-jana/financial-docs-qa-assistant",
@@ -79,8 +138,18 @@
   {
     "title": "Illuminating Insights for Global Electronics",
     "description": "A data storytelling dashboard that analyzes global electronics market trends, supply chain metrics, and operational KPIs, offering interactive insights for strategic planning.",
-    "tech": ["Python", "Streamlit", "Pandas", "Plotly", "Data Storytelling"],
-    "domains": ["Business Intelligence", "Data Visualization", "Dashboarding"],
+    "tech": [
+      "Python",
+      "Streamlit",
+      "Pandas",
+      "Plotly",
+      "Data Storytelling"
+    ],
+    "domains": [
+      "Business Intelligence",
+      "Data Visualization",
+      "Dashboarding"
+    ],
     "image": "https://socialify.git.ci/avijit-jana/Illuminating-Insights-for-Global-Electronics/image?custom_language=Jupyter+Notebook&font=Bitter&language=1&name=1&owner=1&pattern=Formal+Invitation&stargazers=1&theme=Dark",
     "imageAlt": "Global electronics insights dashboard",
     "url": "https://github.com/avijit-jana/Illuminating-Insights-for-Global-Electronics",
@@ -90,12 +159,144 @@
   {
     "title": "Used Car Price Prediction",
     "description": "A machine learning project that predicts used car prices based on features like brand, mileage, fuel type, and year, with an interactive Streamlit interface for exploration.",
-    "tech": ["Python", "Scikit-learn", "Streamlit", "Pandas", "Machine Learning"],
-    "domains": ["Machine Learning", "Predictive Analytics", "Dashboarding"],
+    "tech": [
+      "Python",
+      "Scikit-learn",
+      "Streamlit",
+      "Pandas",
+      "Machine Learning"
+    ],
+    "domains": [
+      "Machine Learning",
+      "Predictive Analytics",
+      "Dashboarding"
+    ],
     "image": "https://socialify.git.ci/avijit-jana/Used-Car-Price-Prediction/image?custom_language=Jupyter+Notebook&font=JetBrains+Mono&language=1&name=1&owner=1&pattern=Formal+Invitation&stargazers=1&theme=Dark",
     "imageAlt": "Used car price prediction dashboard",
     "url": "https://github.com/avijit-jana/Used-Car-Price-Prediction",
     "repo": "https://github.com/avijit-jana/Used-Car-Price-Prediction",
+    "external": true
+  },
+  {
+    "title": "FastAPI Student CRUD API",
+    "description": "A fully-fledged CRUD backend built with FastAPI and SQLite, showcasing clean API architecture, schema validation, and production-ready patterns using SQLModel. Ideal for beginners learning REST APIs and backend fundamentals.",
+    "tech": [
+      "Python",
+      "FastAPI",
+      "SQLModel",
+      "SQLite",
+      "Uvicorn"
+    ],
+    "domains": [
+      "Backend Development",
+      "REST APIs",
+      "CRUD Operations"
+    ],
+    "image": "https://socialify.git.ci/avijit-jana/fastapi-crud-app/image?custom_language=Jupyter+Notebook&font=JetBrains+Mono&language=1&name=1&owner=1&pattern=Formal+Invitation&stargazers=1&theme=Dark",
+    "imageAlt": "FastAPI CRUD App Badge",
+    "url": "https://github.com/avijit-jana/fastapi-crud-app",
+    "repo": "avijit-jana/fastapi-crud-app",
+    "external": true
+  },
+  {
+    "title": "Python CRM Product Management System",
+    "description": "A desktop/web product and customer management system built in Python, featuring product CRUD, order tracking, and basic reporting for small businesses.",
+    "tech": [
+      "Python",
+      "Tkinter",
+      "SQLite",
+      "Pandas"
+    ],
+    "domains": [
+      "CRM",
+      "Inventory Management",
+      "Desktop App"
+    ],
+    "image": "https://socialify.git.ci/avijit-jana/python-crm-product-management-system/image?custom_language=Jupyter+Notebook&font=JetBrains+Mono&language=1&name=1&owner=1&pattern=Formal+Invitation&stargazers=1&theme=Dark",
+    "imageAlt": "Python CRM Badge",
+    "url": "https://github.com/avijit-jana/python-crm-product-management-system",
+    "repo": "avijit-jana/python-crm-product-management-system",
+    "external": true
+  },
+  {
+    "title": "RAG Streamlit UI",
+    "description": "A Streamlit front-end for Retrieval Augmented Generation (RAG) workflows that lets users chat with documents and visualize retrieval sources.",
+    "tech": [
+      "Python",
+      "Streamlit",
+      "LangChain",
+      "Vector DB"
+    ],
+    "domains": [
+      "RAG",
+      "NLP",
+      "Developer Tools"
+    ],
+    "image": "https://socialify.git.ci/avijit-jana/rag-streamlit-ui/image?custom_language=Jupyter+Notebook&font=JetBrains+Mono&language=1&name=1&owner=1&pattern=Formal+Invitation&stargazers=1&theme=Dark",
+    "imageAlt": "RAG Streamlit UI Badge",
+    "url": "https://github.com/avijit-jana/rag-streamlit-ui",
+    "repo": "avijit-jana/rag-streamlit-ui",
+    "external": true
+  },
+  {
+    "title": "Horse Race Prediction",
+    "description": "A machine learning pipeline for predicting horse race outcomes using feature engineering, model training, and evaluation with visualized results.",
+    "tech": [
+      "Python",
+      "Scikit-learn",
+      "Pandas",
+      "Matplotlib"
+    ],
+    "domains": [
+      "Machine Learning",
+      "Time Series",
+      "Sports Analytics"
+    ],
+    "image": "https://socialify.git.ci/avijit-jana/horse-race-prediction/image?custom_language=Jupyter+Notebook&font=JetBrains+Mono&language=1&name=1&owner=1&pattern=Formal+Invitation&stargazers=1&theme=Dark",
+    "imageAlt": "Horse Race Prediction Badge",
+    "url": "https://github.com/avijit-jana/horse-race-prediction",
+    "repo": "avijit-jana/horse-race-prediction",
+    "external": true
+  },
+  {
+    "title": "Bitcoin Sentiment Trader Performance Analysis",
+    "description": "An analysis toolkit that correlates social sentiment signals with Bitcoin trading performance, including backtests, visualizations, and performance metrics.",
+    "tech": [
+      "Python",
+      "Pandas",
+      "NLTK",
+      "Backtrader",
+      "Plotly"
+    ],
+    "domains": [
+      "Quantitative Analysis",
+      "Crypto",
+      "Sentiment Analysis"
+    ],
+    "image": "https://socialify.git.ci/avijit-jana/bitcoin-sentiment-trader-performance-analysis/image?custom_language=Jupyter+Notebook&font=JetBrains+Mono&language=1&name=1&owner=1&pattern=Formal+Invitation&stargazers=1&theme=Dark",
+    "imageAlt": "Bitcoin Sentiment Analysis Badge",
+    "url": "https://github.com/avijit-jana/bitcoin-sentiment-trader-performance-analysis",
+    "repo": "avijit-jana/bitcoin-sentiment-trader-performance-analysis",
+    "external": true
+  },
+  {
+    "title": "Eye Diagnosis Attention CNN",
+    "description": "A convolutional neural network with attention mechanisms for automated eye disease classification from retinal images, with visualization of attention maps.",
+    "tech": [
+      "Python",
+      "TensorFlow",
+      "Keras",
+      "OpenCV"
+    ],
+    "domains": [
+      "Computer Vision",
+      "Medical Imaging",
+      "Deep Learning"
+    ],
+    "image": "https://socialify.git.ci/avijit-jana/eye-diagnosis-attention-cnn/image?custom_language=Jupyter+Notebook&font=JetBrains+Mono&language=1&name=1&owner=1&pattern=Formal+Invitation&stargazers=1&theme=Dark",
+    "imageAlt": "Eye Diagnosis CNN Badge",
+    "url": "https://github.com/avijit-jana/eye-diagnosis-attention-cnn",
+    "repo": "avijit-jana/eye-diagnosis-attention-cnn",
     "external": true
   }
 ]
