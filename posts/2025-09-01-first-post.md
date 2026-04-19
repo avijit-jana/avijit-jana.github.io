@@ -1,12 +1,10 @@
 ---
-title: "First post — Deploying ML on GitHub Pages"
-date: 2025-09-01
-author: Master
-tags: [github-pages, deployment, ml]
+Title: First post — Deploying ML on GitHub Pages
+Date: 2025-09-01
+Author: Master
+Tags: github-pages, deployment, ml
 ---
 
 # Deploying ML portfolios on GitHub Pages
 
-Static sites can still be excellent for ML portfolios. Use client-side rendering for markdown, pre-generate structured data, and host heavy assets on CDNs. This post explains how to...
-
-<!-- Add full content... -->
+The post introduces deploying machine learning portfolios on GitHub Pages. It highlights static sites as a viable option, recommending client-side markdown rendering, pre-generating structured data, and offloading heavy assets to CDNs. The draft ends with a placeholder for full content expansion.

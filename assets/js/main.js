@@ -15,11 +15,79 @@ let allProjects = [];
 document.addEventListener('DOMContentLoaded', () => {
   initNavToggle();
   initThemeToggle();
+  initScrollProgress();
+  initActiveNav();
   loadProjects();
   loadBlogTeasers();
   initContactForm();
   initDynamicGreeting();
+  initFooter();
 });
+
+/* =============================================
+   SCROLL PROGRESS BAR
+   ============================================= */
+function initScrollProgress() {
+  const progressBar = document.getElementById('scrollProgress');
+  if (!progressBar) return;
+
+  window.addEventListener('scroll', () => {
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    progressBar.style.width = scrolled + '%';
+  });
+}
+
+/* =============================================
+   ACTIVE NAV HIGHLIGHTING
+   ============================================= */
+function initActiveNav() {
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-list a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    const scrollPos = window.scrollY + 100; // Offset for header height
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
+      }
+    });
+
+    // Special case for blog page link (don't highlight if on index unless it's a section)
+  });
+}
+
+/* =============================================
+   FOOTER: Date and Back to Top
+   ============================================= */
+function initFooter() {
+  const yearEl = document.getElementById('year');
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
+
+  const backToTopBtn = document.getElementById('backToTop');
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+}
 
 /* =============================================
    THEME TOGGLE
@@ -328,50 +396,122 @@ function escapeHtml(str = '') {
 }
 
 /* =============================================
-   DYNAMIC GREETING: Typewriter animation with blinking cursor
+   DYNAMIC TYPEWRITER: Block cursor, synced badges & sub-headline
    ============================================= */
 function initDynamicGreeting() {
-  const el = document.getElementById('dynamic-greeting');
-  if (!el) return;
+  const nounEl = document.getElementById('dynamic-noun');
+  if (!nounEl) return;
 
+
+  // Phrase config: noun, color, subtitle, active badge index
   const phrases = [
-    "I am Avijit",
-    "Hello there!",
-    "Welcome to my portfolio",
-    "Crafting clarity through code",
-    "Turning ideas into impact"
+    {
+      noun: "Data Scientist",
+      color: "#3b82f6",
+      subtitle: "Building production-ready ML systems and data-driven insights.",
+      badgeIndex: 0,
+      badgeIcon: "fa-solid fa-brain",
+      badgeText: "End-to-End MLOps"
+    },
+    {
+      noun: "ML Engineer",
+      color: "#a855f7",
+      subtitle: "Designing scalable machine learning pipelines for production.",
+      badgeIndex: 1,
+      badgeIcon: "fa-solid fa-robot",
+      badgeText: "RAG & LLM Apps"
+    },
+    {
+      noun: "Problem Solver",
+      color: "#22c55e",
+      subtitle: "Turning complex data challenges into measurable business value.",
+      badgeIndex: 2,
+      badgeIcon: "fa-solid fa-cloud",
+      badgeText: "AWS Cloud"
+    },
+    {
+      noun: "Agent Builder",
+      color: "#f97316",
+      subtitle: "Building autonomous AI agents for complex workflows.",
+      badgeIndex: 0,
+      badgeIcon: "fa-solid fa-robot",
+      badgeText: "Agent Builder"
+    },
+    {
+      noun: "Data Analyst",
+      color: "#3b82f6",
+      subtitle: "Transforming complex data into actionable business insights.",
+      badgeIndex: 0,
+      badgeIcon: "fa-solid fa-chart-line",
+      badgeText: "Data Visualization"
+    },
   ];
 
-  // Typewriter configuration
-  const typeSpeed = 80;      // ms per character when typing
-  const deleteSpeed = 40;    // ms per character when deleting
-  const pauseAfterType = 2000; // ms to pause after typing complete phrase
-  const pauseBeforeDelete = 500; // ms before starting to delete
+  const typeSpeed = 70;
+  const deleteSpeed = 35;
+  const pauseAfterType = 2500;
+  const pauseBeforeDelete = 400;
 
   let phraseIndex = 0;
   let charIndex = 0;
   let isDeleting = false;
   let isPaused = false;
 
-  // Clear initial text and add cursor wrapper
-  el.innerHTML = '<span class="typewriter-text"></span><span class="typewriter-cursor">|</span>';
-  const textEl = el.querySelector('.typewriter-text');
+  // Set up DOM: typewriter text + block cursor
+  nounEl.innerHTML = '<span class="typewriter-text"></span><span class="block-cursor"></span>';
+  const textEl = nounEl.querySelector('.typewriter-text');
+
+  const subtitleEl = document.getElementById('heroSubtitle');
+  const badgeGrid = document.getElementById('heroBadgeGrid');
+
+  // Initially sync to first phrase
+  syncPhrase(0);
+
+  function syncPhrase(index) {
+    const phrase = phrases[index];
+
+    // Update accent color
+    nounEl.style.color = phrase.color;
+
+    // Sync subtitle with fade effect
+    if (subtitleEl) {
+      subtitleEl.style.opacity = '0';
+      subtitleEl.style.transform = 'translateY(10px)';
+      setTimeout(() => {
+        subtitleEl.textContent = phrase.subtitle;
+        subtitleEl.style.opacity = '1';
+        subtitleEl.style.transform = 'translateY(0)';
+      }, 200);
+    }
+
+    // Sync badge grid — highlight active, update icon+text
+    if (badgeGrid) {
+      const badges = badgeGrid.querySelectorAll('.hero-badge-item');
+      badges.forEach((badge, i) => {
+        badge.classList.remove('active');
+        if (i === phrase.badgeIndex) {
+          badge.classList.add('active');
+          // Update icon and text
+          const icon = badge.querySelector('i');
+          const span = badge.querySelector('span');
+          if (icon) icon.className = phrase.badgeIcon;
+          if (span) span.textContent = phrase.badgeText;
+        }
+      });
+    }
+  }
 
   function typeWriter() {
     const currentPhrase = phrases[phraseIndex];
 
-    if (isPaused) {
-      return;
-    }
+    if (isPaused) return;
 
     if (!isDeleting) {
-      // Typing phase
-      if (charIndex < currentPhrase.length) {
-        textEl.textContent = currentPhrase.substring(0, charIndex + 1);
+      if (charIndex < currentPhrase.noun.length) {
+        textEl.textContent = currentPhrase.noun.substring(0, charIndex + 1);
         charIndex++;
         setTimeout(typeWriter, typeSpeed);
       } else {
-        // Finished typing, pause before deleting
         isPaused = true;
         setTimeout(() => {
           isPaused = false;
@@ -380,20 +520,18 @@ function initDynamicGreeting() {
         }, pauseAfterType);
       }
     } else {
-      // Deleting phase
       if (charIndex > 0) {
-        textEl.textContent = currentPhrase.substring(0, charIndex - 1);
+        textEl.textContent = currentPhrase.noun.substring(0, charIndex - 1);
         charIndex--;
         setTimeout(typeWriter, deleteSpeed);
       } else {
-        // Finished deleting, move to next phrase
         isDeleting = false;
         phraseIndex = (phraseIndex + 1) % phrases.length;
+        syncPhrase(phraseIndex);
         setTimeout(typeWriter, typeSpeed);
       }
     }
   }
 
-  // Start the typewriter effect
   typeWriter();
 }
