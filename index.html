@@ -8,7 +8,7 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
   <title>Avijit Jana — Data Scientist | Portfolio</title>
   <meta name="description"
-    content="Avijit Jana — Data Scientist. Portfolio showcasing data science, machine learning, and analytics projects. I build intelligent systems that deliver impactful solutions. Contact for collaboration or hiring.">
+    content="Avijit Jana — Expert Data Scientist & ML Engineer. Specializing in MLOps, LLMs, RAG applications, and production-ready AI solutions. Hire for machine learning consulting, predictive modeling, and data engineering.">
 
   <!-- Canonical -->
   <link rel="canonical" href="https://avijit-jana.github.io/" />
@@ -22,6 +22,7 @@
   <meta property="og:site_name" content="Avijit Jana — Data Scientist" />
   <meta property="og:image" content="https://avijit-jana.github.io/assets/images/hero.jpg" />
   <meta name="google-site-verification" content="j3XqUoNIyJE90jhMHNSrwDG09jqtZYIIESXyhnAPkBQ" />
+  <meta name="keywords" content="Avijit Jana, Data Scientist, Machine Learning, Portfolio, Analytics, AI Projects">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
@@ -57,7 +58,8 @@
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity=""
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+  <link rel="icon" type="image/png" href="assets/images/my_pic.png" alt="Avijit Jana Portfolio">
+  <link rel="preload" as="image" href="assets/images/hero.jpg" alt="Avijit Jana Portfolio">
   <!-- Main CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
 
@@ -76,9 +78,12 @@
   <a class="skip-link" href="#maincontent">Skip to content</a>
 
   <header class="site-header" role="banner" aria-label="Main header">
+    <div class="scroll-progress-container">
+      <div id="scrollProgress" class="scroll-progress-bar"></div>
+    </div>
     <div class="container header-inner">
       <a class="brand" href="/" aria-label="Homepage">
-        <img src="assets/images/my_pic.png" alt="Avijit Jana professional portrait" class="brand-img" width="44"
+        <img src="assets/images/logo.png" alt="Avijit Jana professional portrait" class="brand-img" width="44"
           height="44" />
         <span class="brand-name">Avijit Jana</span>
       </a>
@@ -96,80 +101,120 @@
           <li><a href="#contact">Contact</a></li>
           <li><a href="assets/My_Resume.pdf" target="_blank" rel="noopener">Resume</a></li>
         </ul>
-        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
-          <i class="fa-solid fa-moon" aria-hidden="true"></i>
-        </button>
+        <div class="header-actions">
+          <div class="header-socials">
+            <a href="https://github.com/avijit-jana" aria-label="GitHub" target="_blank" rel="noopener">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/avijit-jana" aria-label="LinkedIn" target="_blank" rel="noopener">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+          </div>
+          <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+            <i class="fa-solid fa-moon" aria-hidden="true"></i>
+          </button>
+          <a href="#contact" class="btn primary header-cta">Hire Me</a>
+        </div>
       </nav>
     </div>
   </header>
 
   <main id="maincontent" role="main">
     <!-- Hero / Landing -->
-    <section class="hero container" aria-labelledby="hero-heading">
-      <div class="hero-content">
-        <span class="hero-badge">
-          <i class="fa-solid fa-sparkles" aria-hidden="true"></i>
-          Available for Projects
-        </span>
-        <h1 id="hero-heading" class="hero-title" aria-live="polite">
-          <span id="dynamic-greeting">I am Avijit Jana</span>
-          <span class="role">Data Scientist & ML Engineer</span>
-        </h1>
-        <p class="lead">I build production-ready machine learning systems and data-driven insights. Blending rigorous
-          experimentation with scalable engineering to deliver impactful AI solutions.</p>
+    <section class="hero-section" aria-labelledby="hero-heading">
+      <div class="hero-container">
+        <div class="hero-content">
+          <span class="hero-badge">
+            <i class="fa-solid fa-sparkles" aria-hidden="true"></i>
+            Available for Projects
+          </span>
+          <h1 id="hero-heading" class="hero-title" aria-live="polite">
+            <span class="hero-static-text">I am a&nbsp;</span>
+            <span id="dynamic-noun" class="hero-dynamic-noun"></span>
+          </h1>
+          <p class="hero-subtitle" id="heroSubtitle">Building production-ready ML systems and data-driven insights.</p>
+          <p class="hero-lead" id="heroLead">Experiment with precision, engineer with scale. Delivering AI that
+            transforms ideas into impact 🚀</p>
 
-        <!-- Key Highlights -->
-        <div class="hero-highlights">
-          <div class="highlight-item">
-            <i class="fa-solid fa-brain" aria-hidden="true"></i>
-            <span>End-to-End MLOps</span>
+          <!-- Synced Badge Grid -->
+          <div class="hero-badge-grid" id="heroBadgeGrid">
+            <div class="hero-badge-item" data-badge="0">
+              <i class="fa-solid fa-brain" aria-hidden="true"></i>
+              <span>End-to-End MLOps</span>
+            </div>
+            <div class="hero-badge-item" data-badge="1">
+              <i class="fa-solid fa-robot" aria-hidden="true"></i>
+              <span>RAG & LLM Apps</span>
+            </div>
+            <div class="hero-badge-item" data-badge="2">
+              <i class="fa-solid fa-cloud" aria-hidden="true"></i>
+              <span>AWS Cloud</span>
+            </div>
           </div>
-          <div class="highlight-item">
-            <i class="fa-solid fa-robot" aria-hidden="true"></i>
-            <span>RAG & LLM Apps</span>
-          </div>
-          <div class="highlight-item">
-            <i class="fa-solid fa-cloud" aria-hidden="true"></i>
-            <span>AWS Cloud</span>
+
+          <div class="hero-cta">
+            <a class="btn primary" href="#projects">
+              <i class="fa-solid fa-folder-open" aria-hidden="true"></i>
+              View Projects
+            </a>
+            <a class="btn hero-outline-btn" href="assets/My_Resume.pdf" aria-label="Download professional resume (PDF)">
+              <i class="fa-solid fa-download" aria-hidden="true"></i>
+              Download Resume
+            </a>
           </div>
         </div>
-
-        <p class="hero-cta">
-          <a class="btn primary" href="#projects">
-            <i class="fa-solid fa-folder-open" aria-hidden="true"></i>
-            View Projects
-          </a>
-          <a class="btn outline" href="assets/My_Resume.pdf" aria-label="Download professional resume (PDF)">
-            <i class="fa-solid fa-download" aria-hidden="true"></i>
-            Download Resume
-          </a>
-        </p>
+        <figure class="hero-image" aria-hidden="true">
+          <img src="assets/images/my_pic.png" alt="Professional portrait of Avijit Jana" loading="lazy">
+        </figure>
       </div>
-      <figure class="hero-image" aria-hidden="true">
-        <img src="assets/images/my_pic.png" alt="Professional portrait of Avijit Jana" loading="lazy">
-      </figure>
     </section>
 
-    <!-- About -->
+    <!-- About & Expertise -->
     <section id="about" class="container about" aria-labelledby="about-heading">
-      <h2 id="about-heading">About Me</h2>
-      <p>I'm a <b>Data Scientist</b> and Machine Learning Engineer focused on <b>end-to-end MLOps</b>, building robust
-        data pipelines, and ensuring model interpretability. I specialize in turning complex, messy data into measurable
-        business value with modern AI technologies.</p>
-      <ul class="about-highlights" role="list">
-        <li>
-          <b>Production ML:</b> Deployment, monitoring, MLOps, Sagemaker/Vertex AI, Docker containerization
-        </li>
-        <li>
-          <b>Data Engineering:</b> ETL pipelines, SQL, Spark, Airflow, real-time data processing
-        </li>
-        <li>
-          <b>AI/LLM:</b> RAG applications, LangChain, vector databases, prompt engineering
-        </li>
-        <li>
-          <b>Interpretability & Experimentation:</b> Causal Inference, A/B testing, SHAP/LIME, Statistical Modeling
-        </li>
-      </ul>
+      <div class="about-grid">
+        <div class="about-text">
+          <h2 id="about-heading">About My Expertise</h2>
+          <p>As a <b>Data Scientist</b> and <b>Machine Learning Engineer</b>, I specialize in architecting <b>end‑to‑end
+              MLOps</b>,
+            <b>scalable data pipelines</b>, and <b>production‑ready AI systems</b>. My core focus is bridging the gap
+            between
+            cutting-edge research and <b>measurable business value</b> through rigorous experimentation and modern AI
+            technologies.
+          </p>
+          <p>I have a proven track record of delivering <b>intelligent data-driven insights</b> and <b>scalable ML
+              solutions</b>
+            across domains, from predictive analytics to <b>Natural Language Processing (NLP)</b>. Whether it's
+            fine-tuning <b>Large Language Models (LLMs)</b>
+            or optimizing <b>data engineering workflows</b>, I build systems designed for reliability and performance.
+          </p>
+        </div>
+        <div class="services-list" role="list">
+          <div class="service-item" role="listitem">
+            <i class="fa-solid fa-code-branch" aria-hidden="true"></i>
+            <h3>MLOps & Production ML</h3>
+            <p>Deployment, monitoring, and CI/CD for machine learning models using Docker, Kubernetes, and cloud native
+              tools.</p>
+          </div>
+          <div class="service-item" role="listitem">
+            <i class="fa-solid fa-brain" aria-hidden="true"></i>
+            <h3>AI & RAG Applications</h3>
+            <p>Building <b>advanced RAG systems</b>, custom LLM agents, and conversational AI tailored to specific data
+              needs.</p>
+          </div>
+          <div class="service-item" role="listitem">
+            <i class="fa-solid fa-chart-pie" aria-hidden="true"></i>
+            <h3>Predictive Analytics</h3>
+            <p>Transforming complex datasets into <b>predictive insights</b> and actionable business intelligence
+              dashboards.</p>
+          </div>
+          <div class="service-item" role="listitem">
+            <i class="fa-solid fa-gears" aria-hidden="true"></i>
+            <h3>Data Engineering</h3>
+            <p>Architecting robust <b>ETL pipelines</b>, SQL optimizations, and real-time data processing for enterprise
+              scale.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Skills -->
@@ -278,54 +323,147 @@
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="container contact" aria-labelledby="contact-heading">
-      <h2 id="contact-heading">Let's Connect</h2>
-      <p>I'm available for collaboration, consulting, or tackling data science challenges. Whether it's a project, an
-        idea, or a new opportunity, I'd love to hear from you — just drop a message using the form below.👇</p>
+    <section id="contact" class="contact-section" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="contact-wrapper">
+          <div class="contact-header">
+            <h2 id="contact-heading">Let's Connect</h2>
+            <p>I'm available for collaboration, consulting, or tackling data science challenges. Whether it's a project,
+              an
+              idea, or a new opportunity — I'd love to hear from you.</p>
+          </div>
 
-      <form class="contact-form" onsubmit="handleContact(event)" aria-label="Contact form">
-        <label for="name">Name</label>
-        <input id="name" name="name" required placeholder="Your name" />
+          <form class="contact-form" onsubmit="handleContact(event)" aria-label="Contact form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input id="name" name="name" required placeholder="Your name" />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required placeholder="avijitjanascience24@gmail.com" />
+              </div>
+            </div>
 
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" required placeholder="your.email@example.com" />
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required
+                placeholder="Tell me about your project or idea or whatever is on your mind..."></textarea>
+            </div>
 
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" required
-          placeholder="Tell me about your project or idea..."></textarea>
-
-        <div class="form-actions">
-          <button type="submit" class="btn primary">
-            <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
-            Send Message
-          </button>
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=your.email@example.com" target="_blank"
-            rel="noopener noreferrer" class="btn outline">
-            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-            Or email me
-          </a>
+            <div class="form-actions">
+              <button type="submit" class="btn primary">
+                <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+                Send Message
+              </button>
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=avijitjanascience24@gmail.com" target="_blank"
+                rel="noopener noreferrer" class="btn outline">
+                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                Or email me
+              </a>
+            </div>
+          </form>
         </div>
-      </form>
+      </div>
+    </section>
+    <!-- SEO FAQ Section -->
+    <section class="container faq-section" aria-labelledby="faq-heading">
+      <h2 id="faq-heading">Data Science & AI Solutions FAQ</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3>What services do you provide as a Data Scientist?</h3>
+          <p>I specialize in <b>machine learning engineering</b>, <b>MLOps implementation</b>, and building <b>custom AI
+              agents</b> using RAG (Retrieval Augmented Generation). This includes everything from data cleaning to
+            model deployment on AWS/GCP.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How do you approach a Machine Learning project?</h3>
+          <p>My workflow follows a rigorous <b>MLOps lifecycle</b>: starting with business objective alignment, followed
+            by exploratory data analysis (EDA), iterative modeling, and finally productionizing the solution with robust
+            monitoring.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Do you work with LLMs and Generative AI?</h3>
+          <p>Yes, I build <b>production-ready LLM applications</b>, focusing on fine-tuning, prompt engineering, and
+            integrating <b>Vector Databases</b> (like Pinecone or ChromaDB) for scalable AI solutions.</p>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer" role="contentinfo">
-    <div class="container footer-inner">
-      <small>&copy; <span id="year"></span> Avijit Jana — Data Scientist. Built with ❤️ • All rights reserved.</small>
-      <nav aria-label="Footer social">
-        <a href="https://github.com/avijit-jana" aria-label="GitHub" target="_blank" rel="noopener"><i
-            class="fa-brands fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/avijit-jana" aria-label="LinkedIn" target="_blank" rel="noopener"><i
-            class="fa-brands fa-linkedin"></i></a>
-        <a href="#" aria-label="X/Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-      </nav>
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Profile Column -->
+        <div class="footer-col profile-col">
+          <div class="footer-profile">
+            <div class="footer-avatar">AJ</div>
+            <div class="footer-info">
+              <h3 class="footer-name">Avijit Jana</h3>
+              <p class="footer-title">Data Scientist & ML Engineer</p>
+            </div>
+          </div>
+          <p class="footer-desc">
+            Building production-ready machine learning systems and delivering impactful AI solutions through rigorous
+            experimentation and scalable engineering.
+          </p>
+          <div class="footer-socials" aria-label="Social media links">
+            <a href="https://github.com/avijit-jana" aria-label="GitHub" target="_blank" rel="noopener"><i
+                class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/avijit-jana" aria-label="LinkedIn" target="_blank" rel="noopener"><i
+                class="fa-brands fa-linkedin"></i></a>
+            <a href="https://www.kaggle.com/avijitjana101" aria-label="Kaggle" target="_blank" rel="noopener"><i
+                class="fa-brands fa-kaggle"></i></a>
+            <a href="https://dev.to/avijitjana" aria-label="Dev.to" target="_blank" rel="noopener"><i
+                class="fa-brands fa-dev"></i></a>
+            <a href="#contact" aria-label="Contact Me"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+        </div>
+
+        <!-- Navigation Column -->
+        <div class="footer-col nav-col">
+          <h4 class="footer-heading">NAVIGATION</h4>
+          <ul class="footer-links" role="list">
+            <li><a href="#maincontent">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Get In Touch Column -->
+        <div class="footer-col contact-col">
+          <h4 class="footer-heading">GET IN TOUCH</h4>
+          <div class="footer-contact-box">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            <span>avijitjanascience24@gmail.com</span>
+          </div>
+          <div class="footer-quote-card">
+            <i class="fa-solid fa-quote-left footer-quote-icon" aria-hidden="true"></i>
+            <blockquote class="footer-quote-text">
+              "The best way to predict the future is to create it."
+            </blockquote>
+            <cite class="footer-quote-author">— Peter Drucker</cite>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="copyright">
+          &copy; <span id="year"></span> <strong>Avijit Jana</strong>. All rights reserved.
+        </div>
+        <div class="legal-links">
+          <a href="#">Privacy Policy</a>
+          <span class="dot">•</span>
+          <a href="#">Terms of Service</a>
+        </div>
+        <button class="back-to-top" id="backToTop" aria-label="Back to top">
+          Back to top <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+        </button>
+      </div>
     </div>
   </footer>
-
-  <!-- Set copyright year -->
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 
   <!-- Marked (markdown parser) & main JS -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>

@@ -1,19 +1,21 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Blog post — Master</title>
+  <title>Blog post — Avijit Jana</title>
   <meta name="robots" content="index, follow" />
   <link rel="stylesheet" href="assets/css/style.css" />
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
-  <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-XXXXXXX');</script>
+  <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-XXXXXXX');</script>
 </head>
+
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="/">Master</a>
+      <a class="brand" href="/">Avijit Jana</a>
       <nav class="site-nav" aria-label="Primary navigation">
         <ul class="nav-list">
           <li><a href="/">Home</a></li>
@@ -27,27 +29,93 @@
     <p>Loading post…</p>
   </main>
 
-  <footer class="site-footer container">
-    <small>&copy; <span id="year"></span> Master</small>
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Profile Column -->
+        <div class="footer-col profile-col">
+          <div class="footer-profile">
+            <div class="footer-avatar">AJ</div>
+            <div class="footer-info">
+              <h3 class="footer-name">Avijit Jana</h3>
+              <p class="footer-title">Data Scientist & ML Engineer</p>
+            </div>
+          </div>
+          <p class="footer-desc">
+            Building production-ready machine learning systems and delivering impactful AI solutions through rigorous
+            experimentation and scalable engineering.
+          </p>
+          <div class="footer-socials" aria-label="Social media links">
+            <a href="https://github.com/avijit-jana" aria-label="GitHub" target="_blank" rel="noopener"><i
+                class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/avijit-jana" aria-label="LinkedIn" target="_blank" rel="noopener"><i
+                class="fa-brands fa-linkedin"></i></a>
+            <a href="/#contact" aria-label="Contact Me"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+        </div>
+
+        <!-- Navigation Column -->
+        <div class="footer-col nav-col">
+          <h4 class="footer-heading">NAVIGATION</h4>
+          <ul class="footer-links" role="list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/#about">About</a></li>
+            <li><a href="/#projects">Projects</a></li>
+            <li><a href="/#skills">Skills</a></li>
+            <li><a href="/#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Get In Touch Column -->
+        <div class="footer-col contact-col">
+          <h4 class="footer-heading">GET IN TOUCH</h4>
+          <div class="footer-contact-box">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            <span>your.email@example.com</span>
+          </div>
+          <div class="footer-quote-card">
+            <i class="fa-solid fa-quote-left footer-quote-icon" aria-hidden="true"></i>
+            <blockquote class="footer-quote-text">
+              "The best way to predict the future is to create it."
+            </blockquote>
+            <cite class="footer-quote-author">— Peter Drucker</cite>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="copyright">
+          &copy; <span id="year"></span> <strong>Avijit Jana</strong>. All rights reserved.
+        </div>
+        <div class="legal-links">
+          <a href="#">Privacy Policy</a>
+          <span class="dot">•</span>
+          <a href="#">Terms of Service</a>
+        </div>
+        <button class="back-to-top" id="backToTop" aria-label="Back to top">
+          Back to top <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
   </footer>
 
-  <script>
-    document.getElementById('year').innerText = new Date().getFullYear();
+  <script src="assets/js/main.js" type="module"></script>
 
+  <script>
     // Parse slug from query params
-    function urlParam(name){
+    function urlParam(name) {
       const params = new URLSearchParams(location.search);
       return params.get(name);
     }
 
-    async function loadPost(){
+    async function loadPost() {
       const slug = urlParam('slug');
-      if(!slug){ document.getElementById('postContent').innerHTML = '<p>Post not found.</p>'; return; }
+      if (!slug) { document.getElementById('postContent').innerHTML = '<p>Post not found.</p>'; return; }
 
       // Fetch posts.json to find path
       const list = await fetch('assets/js/posts.json').then(r => r.json());
       const entry = list.find(p => p.slug === slug);
-      if(!entry){ document.getElementById('postContent').innerHTML = '<p>Post not found.</p>'; return; }
+      if (!entry) { document.getElementById('postContent').innerHTML = '<p>Post not found.</p>'; return; }
 
       const md = await fetch(entry.path).then(r => r.text());
       // Render markdown into the page
@@ -67,7 +135,7 @@
         "datePublished": entry.date,
         "author": {
           "@type": "Person",
-          "name": "Master"
+          "name": "Avijit Jana"
         },
         "mainEntityOfPage": {
           "@type": "WebPage",
@@ -83,4 +151,5 @@
     loadPost();
   </script>
 </body>
+
 </html>
