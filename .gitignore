@@ -1,2 +1,8 @@
 Others/
 secrets/
+backend/.env
+myenv/
+venv/
+__pycache__/
+*.pyc
+.vercel
