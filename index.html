@@ -20,7 +20,7 @@
     content="Portfolio showcasing data science, machine learning, and analytics projects." />
   <meta property="og:url" content="https://avijit-jana.github.io/" />
   <meta property="og:site_name" content="Avijit Jana — Data Scientist" />
-  <meta property="og:image" content="https://avijit-jana.github.io/assets/images/hero.jpg" />
+  <meta property="og:image" content="https://avijit-jana.github.io/assets/images/my_pic.png" />
   <meta name="google-site-verification" content="j3XqUoNIyJE90jhMHNSrwDG09jqtZYIIESXyhnAPkBQ" />
   <meta name="keywords" content="Avijit Jana, Data Scientist, Machine Learning, Portfolio, Analytics, AI Projects">
 
@@ -30,7 +30,7 @@
   <meta name="twitter:title" content="Avijit Jana — Data Scientist | Portfolio" />
   <meta name="twitter:description"
     content="Portfolio showcasing data science, machine learning, and analytics projects." />
-  <meta name="twitter:image" content="https://avijit-jana.github.io/assets/images/hero.jpg" />
+  <meta name="twitter:image" content="https://avijit-jana.github.io/assets/images/my_pic.png" />
 
   <!-- SEO: index/follow -->
   <meta name="robots" content="index, follow" />
@@ -56,21 +56,25 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity=""
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="icon" type="image/png" href="assets/images/my_pic.png" alt="Avijit Jana Portfolio">
-  <link rel="preload" as="image" href="assets/images/hero.jpg" alt="Avijit Jana Portfolio">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" href="assets/images/my_pic.png">
+  <link rel="preload" as="image" href="assets/images/my_pic.png">
   <!-- Main CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
 
   <!-- Google Analytics (GA4) — Replace MEASUREMENT_ID -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <!-- Google Analytics (GA4) — Uncomment and replace MEASUREMENT_ID when ready -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-    gtag('config', 'G-XXXXXXX'); // <-- Replace with your GA4 ID
-  </script>
+    gtag('config', 'G-XXXXXXX');
+  </script> -->
+  <!-- Three.js for background effects -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
 </head>
 
 <body class="theme-light">
@@ -83,8 +87,8 @@
     </div>
     <div class="container header-inner">
       <a class="brand" href="/" aria-label="Homepage">
-        <img src="assets/images/logo.png" alt="Avijit Jana professional portrait" class="brand-img" width="44"
-          height="44" />
+        <img src="assets/images/logo.png" alt="Avijit Jana brand logo" class="brand-img" width="44" height="44"
+          loading="eager" />
         <span class="brand-name">Avijit Jana</span>
       </a>
 
@@ -133,8 +137,9 @@
             <span id="dynamic-noun" class="hero-dynamic-noun"></span>
           </h1>
           <p class="hero-subtitle" id="heroSubtitle">Building production-ready ML systems and data-driven insights.</p>
-          <p class="hero-lead" id="heroLead">Experiment with precision, engineer with scale. Delivering AI that
-            transforms ideas into impact 🚀</p>
+          <p class="hero-lead" id="heroLead">We experiment with precision and engineer with scale—building AI that
+            bridges imagination and execution. By transforming ideas into measurable outcomes, we empower innovation to
+            create meaningful impact.</p>
 
           <!-- Synced Badge Grid -->
           <div class="hero-badge-grid" id="heroBadgeGrid">
@@ -163,8 +168,10 @@
             </a>
           </div>
         </div>
-        <figure class="hero-image" aria-hidden="true">
-          <img src="assets/images/my_pic.png" alt="Professional portrait of Avijit Jana" loading="lazy">
+        <figure class="hero-image" aria-hidden="true" id="heroImageContainer">
+          <div id="hero-canvas-container"></div>
+          <img src="assets/images/my_pic.png" alt="Professional portrait of Avijit Jana" width="380" height="380"
+            loading="eager" fetchpriority="high" />
         </figure>
       </div>
     </section>
@@ -317,7 +324,7 @@
       <div class="blog-cta">
         <a href="blog.html" class="btn primary">
           <i class="fa-solid fa-newspaper" aria-hidden="true"></i>
-          View All Posts
+          View All Blogs
         </a>
       </div>
     </section>
@@ -337,11 +344,11 @@
             <div class="form-row">
               <div class="form-group">
                 <label for="name">Name</label>
-                <input id="name" name="name" required placeholder="Your name" />
+                <input id="name" name="name" required placeholder="Your name" autocomplete="name" />
               </div>
               <div class="form-group">
                 <label for="email">Email</label>
-                <input id="email" name="email" type="email" required placeholder="avijitjanascience24@gmail.com" />
+                <input id="email" name="email" type="email" required placeholder="Your email" autocomplete="email" />
               </div>
             </div>
 
@@ -349,6 +356,11 @@
               <label for="message">Message</label>
               <textarea id="message" name="message" rows="5" required
                 placeholder="Tell me about your project or idea or whatever is on your mind..."></textarea>
+              <button type="button" id="fixGrammarBtn" class="btn-text"
+                style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--accent-primary); display: flex; align-items: center; gap: 0.25rem;">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                Fix Grammar
+              </button>
             </div>
 
             <div class="form-actions">
@@ -468,6 +480,7 @@
   <!-- Marked (markdown parser) & main JS -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script src="assets/js/main.js" type="module"></script>
+  <script src="assets/js/hero-animation.js"></script>
 </body>
 
 </html>
