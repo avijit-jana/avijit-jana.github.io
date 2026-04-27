@@ -15,9 +15,10 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    crossorigin="anonymous" />
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
 
   <style>
     :root {
@@ -252,8 +253,8 @@
   </style>
 
   <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
-  <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-XXXXXXX');</script>
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-XXXXXXX');</script> -->
 </head>
 
 <body class="theme-light">
@@ -265,8 +266,7 @@
     </div>
     <div class="container header-inner">
       <a class="brand" href="/" aria-label="Homepage">
-        <img src="assets/images/my_pic.png" alt="Avijit Jana professional portrait" class="brand-img" width="44"
-          height="44" />
+        <img src="assets/images/my_pic.png" alt="Avijit Jana professional portrait" class="brand-img" width="44" height="44" loading="eager" />
         <span class="brand-name">Avijit Jana</span>
       </a>
 
@@ -385,7 +385,7 @@
           <h4 class="footer-heading">GET IN TOUCH</h4>
           <div class="footer-contact-box">
             <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-            <span>your.email@example.com</span>
+            <span>avijitjanascience24@gmail.com</span>
           </div>
           <div class="footer-quote-card">
             <i class="fa-solid fa-quote-left footer-quote-icon" aria-hidden="true"></i>
@@ -536,7 +536,7 @@
 
         return `
           <article class="blog-teaser" style="animation: fadeInUp 0.5s ease-out ${i * 0.1}s backwards;">
-            <img src="${extractedImg}" class="blog-teaser-img" alt="${escapeHtml(p.title)}" loading="lazy">
+            <img src="${extractedImg}" class="blog-teaser-img" alt="${escapeHtml(p.title)}" width="800" height="210" decoding="async" loading="${i < 3 ? 'eager' : 'lazy'}">
             <div class="blog-teaser-content">
                 <p class="meta">${date} • ${sourceName}</p>
                 <h3><a href="${p.link}" target="_blank" rel="noopener noreferrer">${escapeHtml(p.title)}</a></h3>

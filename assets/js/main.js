@@ -1,5 +1,6 @@
 // assets/js/main.js
 // ES module. Modern browsers supported by GitHub Pages.
+import { fixGrammar } from './grammer.js';
 // Responsibilities:
 // - Load projects.json and render filterable/sortable project grid (max 8 shown)
 // - Load posts.json and render blog teasers (latest 3 only)
@@ -159,22 +160,112 @@ function initNavToggle() {
    CONTACT form handler
    ============================================= */
 function initContactForm() {
-  window.handleContact = function (e) {
+  const form = document.querySelector('.contact-form');
+  const statusEl = document.createElement('div');
+  statusEl.id = 'formStatus';
+  statusEl.style.marginTop = '1rem';
+  statusEl.style.padding = '0.75rem';
+  statusEl.style.borderRadius = '4px';
+  statusEl.style.display = 'none';
+  if (form) form.appendChild(statusEl);
+
+  function showStatus(msg, isError = false) {
+    statusEl.textContent = msg;
+    statusEl.style.display = 'block';
+    statusEl.style.backgroundColor = isError ? 'rgba(239, 68, 68, 0.1)' : 'rgba(34, 197, 94, 0.1)';
+    statusEl.style.color = isError ? '#ef4444' : '#22c55e';
+    statusEl.style.border = `1px solid ${isError ? '#ef4444' : '#22c55e'}`;
+    
+    setTimeout(() => {
+      statusEl.style.display = 'none';
+    }, 5000);
+  }
+
+  window.handleContact = async function (e) {
     e.preventDefault();
-    const form = e.target;
-    const name = form.name.value.trim();
-    const email = form.email.value.trim();
-    const message = form.message.value.trim();
+    const formEl = e.target;
+    const submitBtn = formEl.querySelector('button[type="submit"]');
+    const originalBtnText = submitBtn.innerHTML;
+
+    const name = formEl.name.value.trim();
+    const email = formEl.email.value.trim();
+    const message = formEl.message.value.trim();
 
     if (!name || !email || !message) {
-      alert('Please complete the form.');
+      showStatus('Please complete all fields.', true);
       return;
     }
 
-    const subject = encodeURIComponent(`Portfolio inquiry from ${name}`);
-    const body = encodeURIComponent(`${message}\n\n--\n${name}\n${email}`);
-    window.location.href = `mailto:your.email@example.com?subject=${subject}&body=${body}`;
+    // Disable button and show loading state
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+
+    try {
+      // Improved URL detection: Use localhost if on a local file or local server
+      const isLocal = !window.location.hostname || 
+                      window.location.hostname === 'localhost' || 
+                      window.location.hostname === '127.0.0.1';
+      
+      const API_URL = isLocal ? 'http://localhost:5000/api/contact' : '/api/contact'; 
+
+      const response = await fetch(API_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ name, email, message })
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        showStatus('Message sent successfully! I will get back to you soon.', false);
+        formEl.reset();
+      } else {
+        showStatus(result.error || 'Failed to send message. Please try again.', true);
+      }
+    } catch (error) {
+      console.error('Contact error:', error);
+      showStatus('Network error. Is the backend server running?', true);
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalBtnText;
+    }
   };
+
+  const fixBtn = document.getElementById('fixGrammarBtn');
+  const messageArea = document.getElementById('message');
+  if (fixBtn && messageArea) {
+    fixBtn.addEventListener('click', async () => {
+      const originalText = messageArea.value.trim();
+      if (!originalText) return;
+
+      fixBtn.disabled = true;
+      const originalBtnText = fixBtn.innerHTML;
+      fixBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Fixing...';
+
+      try {
+        const corrected = await fixGrammar(originalText);
+        if (corrected && !corrected.startsWith('Error:')) {
+          messageArea.value = corrected;
+          fixBtn.innerHTML = '<i class="fa-solid fa-check"></i> Fixed!';
+          setTimeout(() => {
+            fixBtn.innerHTML = originalBtnText;
+            fixBtn.disabled = false;
+          }, 2000);
+        } else {
+          throw new Error(corrected);
+        }
+      } catch (err) {
+        console.error('Grammar fix failed:', err);
+        fixBtn.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Error';
+        setTimeout(() => {
+          fixBtn.innerHTML = originalBtnText;
+          fixBtn.disabled = false;
+        }, 2000);
+      }
+    });
+  }
 }
 
 /* =============================================
@@ -222,7 +313,7 @@ function renderProjects(projects) {
     card.style.animationDelay = `${index * 0.05}s`;
     card.innerHTML = `
       <a class="project-media" href="${p.url || '#'}" aria-label="${escapeHtml(p.title)} - open project" target="${p.external ? '_blank' : '_self'}" rel="noopener">
-        <img loading="lazy" alt="${escapeHtml(p.imageAlt || p.title)}" src="${p.image || 'assets/images/placeholder-project.jpg'}" />
+        <img loading="${index < 4 ? 'eager' : 'lazy'}" width="400" height="225" decoding="async" alt="${escapeHtml(p.imageAlt || p.title)}" src="${p.image || 'assets/images/placeholder-project.png'}" />
       </a>
       <div class="project-body">
         <h3>${escapeHtml(p.title)}</h3>
