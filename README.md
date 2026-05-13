@@ -10,13 +10,6 @@
   </p>
 </div>
 
-<style>
-  a:hover {
-    opacity: 0.85;
-    transform: scale(1.05);
-  }
-</style>
-
 ---
 
 Thanks for stopping by! This repository is essentially my **"digital identity."** It’s a central hub where I showcase everything I’ve been working on, specifically at the intersection of Data Science, Machine Learning, and MLOps. I built this space to be more than just a resume; it's a fast, good-looking, and high-performance home designed to give you a real feel for my professional journey and technical style.
