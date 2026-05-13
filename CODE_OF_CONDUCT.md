@@ -14,8 +14,10 @@ This repository is a place for learning, sharing, and contributing to the develo
 * Inclusive Language: Please refrain from using language that is disrespectful, discriminatory, or harmful to any community.
 * Collaborate Openly: The repository is intended for shared growth. Be welcoming to new contributors and supportive of learners.
 
+---
+
 <div align="middle">
 
-![Badge](https://img.shields.io/badge/Developed%20By-Avijit_Jana-blueviolet?style=for-the-badge)
+![Badge](https://img.shields.io/badge/Developed%20By-Avijit_Jana-navy?style=for-the-badge)
 
 </div>
