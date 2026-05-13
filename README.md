@@ -63,12 +63,17 @@ Building a full-stack portfolio requires a mix of creative design and solid engi
 To keep things modular and easy to maintain, I’ve organized the code into a clear structure:
 
 ```
-├── assets/             # The "fun" stuff: Three.js logic, CSS styles, and project JSONs.
-├── backend/            # The "engine": Flask code that handles form logic and security.
-├── index.html          # The main landing page (the heart of the portfolio).
-├── blog.html           # A dedicated space for my technical articles and tutorials.
-├── post.html           # A dynamic template used to render individual blog posts.
-└── vercel.json         # The blueprint that tells Vercel how to run the full-stack app.
+├── assets/             # Frontend assets (CSS, JS, Images, JSON data)
+│   ├── js/             # Main logic, Three.js animations, and project data
+│   └── css/            # Modern, modular styling (Vanilla CSS)
+├── backend/            # Flask API for contact form handling
+│   ├── app.py          # Flask application logic
+│   ├── requirements.txt # Python dependencies
+│   └── .env.example    # Template for environment variables
+├── index.html          # Main portfolio entry point
+├── blog.html           # Blog listing page
+├── vercel.json         # Full-stack deployment configuration for Vercel
+└── README.md           # You are here!
 ```
 
 ## ⚡ Want to Run It Yourself?
