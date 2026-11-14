@@ -43,7 +43,7 @@ body.theme-dark {
   --max-width: 1200px;
   --header-height: 72px;
   --utility-bar-height: 34px;
-  --section-space: clamp(3.5rem, 7vw, 6rem);
+  --section-space: clamp(3rem, 5vw, 4.5rem);
 
   /* Micro-Interactions: 200ms Transitions */
   --transition-fast: 200ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -1535,14 +1535,22 @@ section h2::after {
   color: #a5b4fc;
 }
 
+.about,
+.skills,
+.projects,
+.contact-section,
+.faq-section {
+  margin-block: 0;
+}
+
 /* =============================================
    12. SITE FOOTER — BENTO MATRIX
    ============================================= */
 .site-footer {
   background: #050811;
   color: var(--text-muted);
-  padding: clamp(3.5rem, 7vw, 5rem) 0 2rem;
-  margin-top: 4rem;
+  padding: var(--section-space) 0;
+  margin-block: 0;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   position: relative;
 }

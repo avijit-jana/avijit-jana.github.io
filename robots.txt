@@ -1,19 +1,9 @@
-# robots.txt — avijit-jana.github.io
+# robots.txt — avijitjana.vercel.app
 
 User-agent: *
 Allow: /
-
-# Allow all major crawlers
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-# Disallow non-content paths and system directories
 Disallow: /secrets/
 Disallow: /.git/
 Disallow: /.github/
 
-# Sitemap declaration
-Sitemap: https://avijit-jana.github.io/sitemap.xml
+Sitemap: https://avijitjana.vercel.app/sitemap.xml

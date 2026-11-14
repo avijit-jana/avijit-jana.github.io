@@ -4,7 +4,7 @@
   <p>Engineering production-grade machine learning pipelines, scalable AI architectures, and data-driven solutions.</p>
 
   <p>
-    <a href="https://avijit-jana.github.io"><strong>🌐 Live Portfolio</strong></a> |
+    <a href="https://avijitjana.vercel.app/"><strong>🌐 Live Portfolio</strong></a> |
     <a href="https://linkedin.com/in/avijit-jana"><strong>💼 LinkedIn</strong></a> |
     <a href="https://github.com/avijit-jana"><strong>💻 GitHub</strong></a>
   </p>
@@ -21,7 +21,6 @@ Thanks for stopping by! This repository is my **"digital identity."** It’s a c
 - **Ultra-Smooth GPU Compositing**: Replaced viewport-repainting fixed backgrounds with an isolated compositor pseudo-element, converted scroll progress tracking to GPU-accelerated `transform: scaleX(...)`, and leveraged CSS `content-visibility: auto` to bypass rendering offscreen DOM nodes until approached.
 - **Pre-Indexed Projects Grid**: Interactive, instant search and tag-filterable showcase powered by `projects.json`, rendering project cards dynamically in a single batch using `DocumentFragment` with automatic image fallback handlers.
 - **Streamlined Navigation**: Focused 4-section anchor navigation (`About`, `Skills`, `Projects`, `Contact`) with a reflow-free `IntersectionObserver` scroll spy.
-- **Client-Side Contact & Grammar Assist**: Direct contact options with client-side grammar correction powered by the LanguageTool API, protected by an 8-second timeout and bounded LRU caching.
 - **Pure Dark Modernist Bento Aesthetic**: Operates in a dark slate canvas (`#090d16` to `#0f172a`) with translucent frosted surfaces (`backdrop-filter: blur(12px)`), electric indigo (`#6366f1`), and cyan (`#06b6d4`) accents.
 
 ## 🛠️ Tech Stack
@@ -32,7 +31,7 @@ This project is built purely as a **static web application** optimized for GitHu
 | ------------------------- | ------------------------------- | -------------------------------------------------------------------------- |
 | **Structure & Semantics** | HTML5                           | Clean semantic markup, SEO meta tags, OpenGraph, JSON-LD schema            |
 | **Styling**               | Vanilla CSS3                    | Bento grid architecture, CSS tokens, glassmorphism, GPU-accelerated transforms |
-| **Interactivity**         | Vanilla JavaScript (ES Modules) | Client-side search, Three.js 3D WebGL visualization, grammar checking     |
+| **Interactivity**           | Vanilla JavaScript (ES Modules) | Client-side search and Three.js 3D WebGL visualization                     |
 | **Data**                  | JSON                            | Client-side structured data for projects (`projects.json`)                 |
 | **Hosting**               | GitHub Pages                    | Zero-build static hosting with `.nojekyll` support                         |
 
@@ -50,7 +49,6 @@ This project is built purely as a **static web application** optimized for GitHu
 │   ├── js/
 │   │   ├── main.js           # Core client-side app logic & scroll spy
 │   │   ├── hero-animation.js # Three.js zero-GC particle visualization
-│   │   ├── grammer.js        # Client-side grammar checker with timeout
 │   │   └── projects.json     # Project portfolio dataset
 │   ├── images/               # Media assets, brand logo, and portrait
 │   └── My_Resume.pdf         # Professional resume document
